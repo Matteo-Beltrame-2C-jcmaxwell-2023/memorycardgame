@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,46 +9,55 @@
 
     <style>
         img {
-            width: 100px;
+            width: 300px;
         }
     </style>
 </head>
 
 <body>
 
-    <div id="tavolo"></div>
+    <div id="tavoloDaGioco"></div>
+
+    <div class="container">
+        <span class="counter">Punti =</span><span id="counter" class="counter">0</span>
+    </div>
 
     <script>
-        let ncartegirate = 0
-        carte = ["front.jpg","front.jpg","2front.jpg" ,"2front.jpg","3front.jpg","3front.jpg","4front.jpg","4front.jpg","5front.jpg","5front.jpg","6front.jpg","6front.jpg","7front.jpg","7front.jpg","8front.jpg","8front.jpg","9front.jpg","9front.jpg"]
-
-        tavolo = document.querySelector('#tavolo')
+        carte = ["front.jpg, front.jpg, 2front.jpg, 2front.jpg, 3front.jpg, 3front.jpg,4front.jpg,4front.jpg,5front.jpg,5front.jpg,6front.jpg,6front.jpg,7front.jpg,7front.jpg,8front.jpg,8front.jpg,9front.jpg,9front.jpg,"]
+        let NcarteGirate = 0;
+        let primaCartaGirata = null
+        tavolo = document.querySelector('#tavoloDaGioco')
 
         carte.forEach(element => {
-            tavolo.innerHTML += '<img id="'+element+'" src="retro.jpg" onclick="gira(this)" />'
-            console.log('<img id="'+element+'" src="retro.jpg" />')
+            tavolo.innerHTML += '<img id="' + element + '" src="retro.jpg" onclick="gira(this)" />'
+            console.log('<img id="' + element + '" src="retro.jpg" />')
+            
+            var counter = document.getElementById("counter");
+        var count = 0;
         });
 
         function gira(carta) {
-            ncartegirate++
+            NcarteGirate++
+            console.log(NcarteGirate)
             carta.src = carta.id
-            console.log(carta.src)
-            if (ncartegirate == 1)
-                primacartagirata = carta
+            if (NcarteGirate == 1)
+                primaCartaGirata = carta
             else {
-                ncartegirate = 0
-                if (carta.src == primacartagirata.src)
-                    console.log('BRAVO+1 punto')
-                else {
-                    console.log('RIPROVACI')
-                    carta.src = "retro.jpg"
-                    primacartagirata.src = "retro.jpg"
-
-
+                NcarteGirate = 0
+                if (carta.src == primaCartaGirata.src) {
+                    count++;
+                    counter.textContent = count;
+                } else {
+                    setTimeout(function() {
+                        carta.src = "retro.jpg";
+                        primaCartaGirata.src = "retro.jpg";
+                    }, 1000);
                 }
-
-
             }
-             }
+        }
+
+
     </script>
 </body>
+
+</html>
