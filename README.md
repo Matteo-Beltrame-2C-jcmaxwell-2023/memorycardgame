@@ -23,17 +23,18 @@
     </div>
 
     <script>
-        carte = ["front.jpg, front.jpg, 2front.jpg, 2front.jpg, 3front.jpg, 3front.jpg,4front.jpg,4front.jpg,5front.jpg,5front.jpg,6front.jpg,6front.jpg,7front.jpg,7front.jpg,8front.jpg,8front.jpg,9front.jpg,9front.jpg,"]
+        carte = ["front.jpg", "front.jpg", "2front.jpg", "2front.jpg", " 3front.jpg", "3front.jpg", "4front.jpg", "4front.jpg", "5front.jpg", "5front.jpg", "6front.jpg", "6front.jpg", "7front.jpg", "7front.jpg", "8front.jpg", "8front.jpg", "9front.jpg", "9front.jpg"]
         let NcarteGirate = 0;
         let primaCartaGirata = null
         tavolo = document.querySelector('#tavoloDaGioco')
 
+        let counter = document.getElementById("counter");
+        let count = 0;
+
         carte.forEach(element => {
             tavolo.innerHTML += '<img id="' + element + '" src="retro.jpg" onclick="gira(this)" />'
             console.log('<img id="' + element + '" src="retro.jpg" />')
-            
-            var counter = document.getElementById("counter");
-        var count = 0;
+
         });
 
         function gira(carta) {
@@ -48,7 +49,7 @@
                     count++;
                     counter.textContent = count;
                 } else {
-                    setTimeout(function() {
+                    setTimeout(function () {
                         carta.src = "retro.jpg";
                         primaCartaGirata.src = "retro.jpg";
                     }, 1000);
