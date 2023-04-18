@@ -23,10 +23,13 @@
     </div>
 
     <script>
+        // queste sono le immagini delle carte
         carte = ["front.jpg", "front.jpg", "2front.jpg", "2front.jpg", " 3front.jpg", "3front.jpg", "4front.jpg", "4front.jpg", "5front.jpg", "5front.jpg", "6front.jpg", "6front.jpg", "7front.jpg", "7front.jpg", "8front.jpg", "8front.jpg", "9front.jpg", "9front.jpg"]
         let NcarteGirate = 0;
         let primaCartaGirata = null
         tavolo = document.querySelector('#tavoloDaGioco')
+
+//questa è la variabile che ci azzera i punti a inizo gioco
 
         let counter = document.getElementById("counter");
         let count = 0;
@@ -36,7 +39,7 @@
             console.log('<img id="' + element + '" src="retro.jpg" />')
 
         });
-
+// questa è la funzione che gira le carte e tiene punteggio
         function gira(carta) {
             NcarteGirate++
             console.log(NcarteGirate)
@@ -49,6 +52,7 @@
                     count++;
                     counter.textContent = count;
                 } else {
+                    //questo è il dealy quando sbagli le carte e si devono rigirare
                     setTimeout(function () {
                         carta.src = "retro.jpg";
                         primaCartaGirata.src = "retro.jpg";
@@ -56,9 +60,3 @@
                 }
             }
         }
-
-
-    </script>
-</body>
-
-</html>
