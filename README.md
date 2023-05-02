@@ -1,5 +1,4 @@
-# GAMECARD
-### javascript tutorial
+# memory card game
 ![image](https://user-images.githubusercontent.com/124572569/235655488-33dfb28f-9c92-4c9e-ad33-5100661c2da9.png)
 hello guys!! welcome to my page :) the image above is my memory card game 
 ### rules
