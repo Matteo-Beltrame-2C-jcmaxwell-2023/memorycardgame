@@ -31,6 +31,9 @@
 
         // queste sono le immagini delle carte
         carte = ["front.jpg", "front.jpg", "2front.jpg", "2front.jpg", " 3front.jpg", "3front.jpg", "4front.jpg", "4front.jpg", "5front.jpg", "5front.jpg", "6front.jpg", "6front.jpg", "7front.jpg", "7front.jpg", "8front.jpg", "8front.jpg", "9front.jpg", "9front.jpg"]
+        
+        carte.sort (() => Math.random() - 0.5);
+        
         let NcarteGirate = 0;
         let primaCartaGirata = null
         tavolo = document.querySelector('#tavoloDaGioco')
